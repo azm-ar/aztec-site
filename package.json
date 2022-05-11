@@ -1,0 +1,32 @@
+{
+  "name": "aztec",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@splidejs/react-splide": "^0.7.5",
+    "@splidejs/splide-extension-auto-scroll": "^0.4.2",
+    "axios": "^0.27.2",
+    "dotenv": "^15.0.0",
+    "framer-motion": "^6.2.3",
+    "gsap": "^3.9.1",
+    "imagesloaded": "^4.1.4",
+    "next": "^12.0.9",
+    "node-fetch": "^3.2.4",
+    "nodemailer": "^6.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-intersection-observer": "^8.33.1",
+    "react-markdown": "^8.0.0",
+    "sharp": "^0.30.0",
+    "valtio": "^1.2.11"
+  },
+  "devDependencies": {
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8"
+  }
+}

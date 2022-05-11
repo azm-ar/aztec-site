@@ -1,0 +1,372 @@
+// careers
+.careers__section {
+  .careers__section__header {
+    padding: 20rem 4rem 10rem 4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .text {
+      color: #fff;
+      padding-bottom: 4rem;
+
+      h1 {
+        font-size: 10rem;
+        font-family: var(--title-font);
+        font-weight: var(--font-med);
+        line-height: 1.25;
+      }
+
+      p {
+        font-size: 1.15rem;
+        width: 42.5rem;
+        margin: 0 auto;
+      }
+    }
+
+    .btns {
+      display: flex;
+      align-items: center;
+      color: #fff;
+
+      .btn {
+        &:first-of-type {
+          margin-right: 4rem;
+        }
+
+        &:hover {
+          .arrow {
+            svg {
+              path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+
+        .arrow {
+          .btn__hover {
+            background-color: var(--orange);
+          }
+
+          svg {
+            path {
+              fill: var(--orange);
+              transition: var(--fast-speed);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1360px) {
+  .careers__section {
+    .careers__section__header {
+      padding: 18rem 4rem 8rem 4rem;
+
+      .text {
+        h1 {
+          font-size: 8rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .careers__section {
+    .careers__section__header {
+      padding: 16rem 2rem 6rem 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .careers__section {
+    .careers__section__header {
+      .text {
+        h1 {
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .careers__section {
+    .careers__section__header {
+      padding: 12rem 1rem 4rem 1rem;
+
+      .text {
+        h1 {
+          font-size: 4.5rem;
+        }
+
+        p {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .careers__section {
+    .careers__section__header {
+      .text {
+        padding-bottom: 2rem;
+      }
+
+      .btns {
+        flex-direction: column;
+
+        .btn {
+          &:first-of-type {
+            margin-right: 0;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .careers__section {
+    .careers__section__header {
+      .text {
+        h1 {
+          font-size: 3.5rem;
+          padding-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .careers__section {
+    .careers__section__header {
+      .text {
+        h1 {
+          font-size: 2.75rem;
+        }
+      }
+    }
+  }
+}
+
+.careers__grid {
+  padding: 0 8rem 8rem 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .careers__item {
+    padding: 2rem;
+    border-bottom: 1px solid var(--orange);
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+
+    .more {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      transition: var(--fast-speed);
+
+      &:hover {
+        border-color: #fff;
+      }
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2rem;
+        height: 2rem;
+        transition: var(--fast-speed);
+        pointer-events: none;
+
+        &.open {
+          &.plus {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .title {
+      font-size: 2.25rem;
+      font-family: var(--title-font);
+      font-weight: var(--font-med);
+      padding-bottom: 2rem;
+    }
+
+    .content {
+      display: none;
+      margin: 1rem 0 2rem 0;
+      font-size: 1.15rem;
+
+      p,
+      ul {
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.25rem;
+        list-style: square;
+        margin-left: 1rem;
+      }
+
+      &.open {
+        display: block;
+      }
+
+      .summary {
+        padding-bottom: 2rem;
+      }
+
+      .btn {
+        font-size: 1.15rem;
+        justify-content: flex-start;
+        width: max-content;
+
+        .arrow {
+          width: 4rem;
+          height: 4rem;
+
+          .btn__hover {
+            background-color: var(--orange);
+          }
+
+          svg {
+            path {
+              fill: var(--orange);
+              transition: var(--fast-speed);
+            }
+          }
+        }
+
+        &:hover {
+          .arrow {
+            svg {
+              path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .careers__grid {
+    padding: 0 4rem 4rem 4rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .careers__grid {
+    .careers__item {
+      padding: 1rem;
+
+      .title {
+        padding-bottom: 1rem;
+      }
+
+      .more {
+        top: 0.25rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .careers__grid {
+    padding: 0rem 2rem 4rem 2rem;
+
+    .careers__item {
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .content {
+        font-size: 1rem;
+
+        .btn {
+          font-size: 1rem;
+        }
+      }
+
+      .more {
+        top: 0.25rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .careers__grid {
+    padding: 0 1rem 4rem 1rem;
+
+    .careers__item {
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .more {
+        top: 0.5rem;
+        right: 0.5rem;
+        height: 3.5rem;
+        width: 3.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .careers__grid {
+    .careers__item {
+      padding: 0.5rem;
+
+      .title {
+        font-size: 1.25rem;
+      }
+
+      .more {
+        top: 0;
+        right: 0;
+        height: 3rem;
+        width: 3rem;
+
+        svg {
+          width: 50%;
+          height: 50%;
+        }
+      }
+
+      .content {
+        .summary {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
