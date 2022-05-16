@@ -1950,21 +1950,21 @@ main {
 }
 
 .accordion {
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-bottom: 1px solid var(--orange);
   margin-bottom: 2rem;
   position: relative;
   cursor: pointer;
 
   .more {
-    position: absolute;
-    top: 1rem;
-    right: 0;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
     border: 1px solid transparent;
     transition: var(--fast-speed);
+    position: relative;
+    flex-shrink: 0;
+    margin-left: auto;
 
     &:hover {
       border-color: rgb(19, 19, 19);
@@ -1992,17 +1992,17 @@ main {
     font-size: 2.25rem;
     font-family: var(--title-font);
     font-weight: var(--font-med);
-    padding-bottom: 2rem;
     display: flex;
     align-items: center;
 
     .icon {
       width: 2rem;
       height: 2rem;
+      flex-shrink: 0;
     }
 
     p {
-      margin-left: 2rem;
+      margin: 0 2rem;
     }
   }
 
@@ -2024,10 +2024,6 @@ main {
 
     &.open {
       display: block;
-    }
-
-    .summary {
-      padding-bottom: 2rem;
     }
 
     .btn {
@@ -2060,6 +2056,48 @@ main {
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .accordion {
+    .title {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .accordion {
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    .more {
+      height: 2.5rem;
+      width: 2.5rem;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .title {
+      font-size: 1.25rem;
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      p {
+        margin-left: 1.5rem;
+      }
+    }
+
+    .content {
+      font-size: 1rem;
     }
   }
 }

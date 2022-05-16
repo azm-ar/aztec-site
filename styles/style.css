@@ -2562,7 +2562,7 @@ main.careers__section {
 }
 
 .accordion {
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-bottom: 1px solid var(--orange);
   margin-bottom: 2rem;
   position: relative;
@@ -2570,15 +2570,16 @@ main.careers__section {
 }
 
 .accordion .more {
-  position: absolute;
-  top: 1rem;
-  right: 0;
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
   border: 1px solid transparent;
   -webkit-transition: var(--fast-speed);
   transition: var(--fast-speed);
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: auto;
 }
 
 .accordion .more:hover {
@@ -2606,7 +2607,6 @@ main.careers__section {
   font-size: 2.25rem;
   font-family: var(--title-font);
   font-weight: var(--font-med);
-  padding-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2618,10 +2618,12 @@ main.careers__section {
 .accordion .title .icon {
   width: 2rem;
   height: 2rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .accordion .title p {
-  margin-left: 2rem;
+  margin: 0 2rem;
 }
 
 .accordion .content {
@@ -2643,10 +2645,6 @@ main.careers__section {
 
 .accordion .content.open {
   display: block;
-}
-
-.accordion .content .summary {
-  padding-bottom: 2rem;
 }
 
 .accordion .content .btn {
@@ -2676,6 +2674,40 @@ main.careers__section {
 
 .accordion .content .btn:hover .arrow svg path {
   fill: #fff;
+}
+
+@media only screen and (max-width: 850px) {
+  .accordion .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .accordion {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .accordion .more {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .accordion .more svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .accordion .title {
+    font-size: 1.25rem;
+  }
+  .accordion .title .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .accordion .title p {
+    margin-left: 1.5rem;
+  }
+  .accordion .content {
+    font-size: 1rem;
+  }
 }
 
 .home__services {
@@ -4307,7 +4339,7 @@ main.careers__section {
     height: 14rem;
   }
   .services__page__slider .splide__slide .img {
-    height: 28rem;
+    height: 26rem;
   }
   .services__page__slider .splide__slide .content {
     padding: 1.25rem;
@@ -4335,7 +4367,7 @@ main.careers__section {
 }
 
 .service__intro__details .accordions {
-  padding: 8rem 2rem 0 2rem;
+  padding: 8rem 4rem 0 4rem;
   color: #131313;
   max-width: 1366px;
   margin: 0 auto;
@@ -4353,32 +4385,39 @@ main.careers__section {
 }
 
 @media only screen and (max-width: 1366px) {
-  .service__intro__details p {
+  .service__intro__details > p {
     font-size: 3rem;
+  }
+  .service__intro__details .accordions {
+    padding: 8rem 2rem 0 2rem;
   }
 }
 
 @media only screen and (max-width: 950px) {
-  .service__intro__details p {
+  .service__intro__details > p {
     font-size: 2.5rem;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .service__intro__details {
-    padding: 8rem 1.5rem 2rem 1.5rem;
+    padding-bottom: 0;
   }
-  .service__intro__details p {
+  .service__intro__details > p {
     font-size: 2rem;
     padding: 0;
+  }
+  .service__intro__details .accordions {
+    padding: 4rem 1.25rem 0 1.25rem;
+  }
+  .service__intro__details .accordions .content p,
+  .service__intro__details .accordions .content ul {
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  .service__intro__details {
-    padding: 8rem 1rem 2rem 1rem;
-  }
-  .service__intro__details p {
+  .service__intro__details > p {
     font-size: 1.75rem;
   }
 }
@@ -4437,6 +4476,64 @@ main.careers__section {
   font-size: 1.15rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service__main__details .content {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .service__main__details .img {
+    height: 50rem;
+  }
+  .service__main__details .content {
+    padding: 3rem;
+  }
+  .service__main__details .content h3 {
+    font-size: 2rem;
+  }
+  .service__main__details .content .grid {
+    padding: 2rem 0 2rem 0;
+    gap: 2rem;
+  }
+  .service__main__details .content .grid li h4 {
+    font-size: 1.5rem;
+  }
+  .service__main__details .content .grid li p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .service__main__details .content .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .service__main__details {
+    padding-bottom: 0;
+  }
+  .service__main__details .img {
+    display: none;
+  }
+  .service__main__details .content {
+    padding: 8rem 2rem;
+    position: relative;
+    width: 100%;
+  }
+  .service__main__details .content h3 {
+    font-size: 1.5rem;
+  }
+  .service__main__details .content .grid {
+    gap: 3rem;
+  }
+}
+
 .services__info__text {
   max-width: 1600px;
   margin: 0 auto;
@@ -4491,6 +4588,52 @@ main.careers__section {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 1366px) {
+  .services__info__text {
+    gap: 6rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .services__info__text {
+    gap: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .services__info__text {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    padding: 8rem 2rem 6rem 2rem;
+  }
+  .services__info__text .img {
+    height: 32rem;
+  }
+  .services__info__text .text {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .services__info__text .text h4 {
+    font-size: 2.75rem;
+  }
+  .services__info__text .text p {
+    font-size: 1.15rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .services__info__text .img {
+    height: 24rem;
+  }
+  .services__info__text .text h4 {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+  }
+}
+
 .services__full__img {
   padding-top: 8rem;
   position: relative;
@@ -4511,6 +4654,12 @@ main.careers__section {
 .services__full__img figure {
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+}
+
+@media only screen and (max-width: 650px) {
+  .services__full__img {
+    padding-top: 6rem;
+  }
 }
 
 .services__testimonial {
