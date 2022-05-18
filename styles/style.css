@@ -1957,6 +1957,10 @@ main.careers__section {
   cursor: grab;
 }
 
+.services__splide .splide__slide a {
+  width: 100%;
+}
+
 .services__splide .splide__slide .img {
   margin-bottom: 1.5rem;
 }

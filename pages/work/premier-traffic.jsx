@@ -25,7 +25,7 @@ export default function PremierTraffic({ portfolio, portfolios }) {
         <WorkImageGrid portfolio={portfolio} />
         <WorkTestimonial portfolio={portfolio} />
         <FinalImage portfolio={portfolio} />
-        <InnerPortfolioContact bgColour='#fff' colour='rgb(19, 19, 19)' />
+        <InnerPortfolioContact bgColour='#fff' />
         <section className='more__work__slider'>
           <PortfolioSplide portfolio={portfolios} />
         </section>

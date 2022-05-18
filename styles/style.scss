@@ -1303,6 +1303,10 @@ main {
   cursor: grab;
 
   .splide__slide {
+    a {
+      width: 100%;
+    }
+
     .img {
       margin-bottom: 1.5rem;
 
