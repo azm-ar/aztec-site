@@ -29,7 +29,11 @@ export default function WorkTestimonial({ portfolio }) {
   }, []);
 
   return (
-    <section className='work__testimonial' ref={textRef}>
+    <section
+      className='work__testimonial'
+      ref={textRef}
+      style={{ backgroundColor: portfolio.attributes.bgColour }}
+    >
       <div>
         <div className='icon'>
           <svg

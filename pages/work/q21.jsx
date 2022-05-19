@@ -25,7 +25,7 @@ export default function Q21({ portfolio, portfolios }) {
         <WorkImageGrid portfolio={portfolio} />
         <WorkTestimonial portfolio={portfolio} />
         <FinalImage portfolio={portfolio} />
-        <InnerPortfolioContact bgColour={portfolio.attributes.bgColour} />
+        <InnerPortfolioContact bgColour='#fff' />
         <section className='more__work__slider'>
           <PortfolioSplide portfolio={portfolios} />
         </section>

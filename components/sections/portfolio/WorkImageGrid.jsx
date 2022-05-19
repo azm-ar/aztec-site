@@ -32,7 +32,10 @@ export default function WorkImageGrid({ portfolio }) {
   }, []);
 
   return (
-    <section className='work__image__grid'>
+    <section
+      className='work__image__grid'
+      style={{ backgroundColor: portfolio.attributes.bgColour }}
+    >
       <div className='text__header'>
         <p>{portfolio.attributes.infoText}</p>
       </div>
