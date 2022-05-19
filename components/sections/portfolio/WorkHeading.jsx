@@ -47,7 +47,7 @@ export default function WorkHeading({ portfolio }) {
             src={`https://aztec.yeomedia.dev${portfolio.attributes.mainImage.data.attributes.url}`}
             layout='fill'
             alt={portfolio.attributes.mainImage.data.attributes.alternativeText}
-            priority='true'
+            priority
           />
         </figure>
       </div>

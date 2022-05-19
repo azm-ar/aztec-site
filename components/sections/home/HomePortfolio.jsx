@@ -1,5 +1,4 @@
 import HomePortfolioItem from '../portfolio/HomePortfolioItem';
-// import portfolioData from '../../../data/portfolioData.json';
 
 export default function HomePortfolio({ portfolio }) {
   return (

@@ -35,6 +35,7 @@ export default function WorkCircle({ item, index }) {
                 layout='fill'
                 alt={`Aztec Media Our Work ${item.attributes.title}`}
                 className='work__circle__img'
+                priority
                 data-itemname={item.attributes.title}
               />
             </figure>

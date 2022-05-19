@@ -47,7 +47,7 @@ export async function getStaticProps({ params }) {
     props: {
       team: teamData.data,
       services: servicesData.data,
-      portfolio: portfolioData.data.filter((item, index) => index < 4),
+      portfolio: portfolioData.data.filter((item, index) => index < 8),
     },
   };
 }

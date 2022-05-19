@@ -224,10 +224,6 @@
   }
 }
 
-.showcase__img {
-  height: 60rem;
-}
-
 .showcase__img .img__cover {
   position: absolute;
   top: 0;
@@ -243,24 +239,6 @@
 .showcase__img figure {
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-}
-
-@media only screen and (max-width: 1280px) {
-  .showcase__img {
-    height: 50rem;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .showcase__img {
-    height: 40rem;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .showcase__img {
-    height: 32rem;
-  }
 }
 
 .project__details {
@@ -2307,6 +2285,10 @@ main.careers__section {
   fill: var(--orange);
 }
 
+.footer .footer__details .footer__contact div a:last-of-type {
+  margin-bottom: 0;
+}
+
 .footer .footer__details .footer__furniture .footer__yeo__logo svg {
   width: 10rem;
   margin-bottom: 2rem;
@@ -2342,54 +2324,35 @@ main.careers__section {
   margin-left: 0;
 }
 
-@media only screen and (max-width: 1300px) {
+.footer .footer__details .footer__furniture p span:last-of-type {
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 1325px) {
+  .footer .footer__wrapper {
+    padding: 8rem 4rem 4rem 4rem;
+  }
   .footer .footer__cta h5 {
     font-size: 3rem;
   }
-  .footer .footer__details {
+}
+
+@media only screen and (max-width: 1225px) {
+  .footer .footer__details .footer__contact {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .footer .footer__details .footer__furniture {
-    padding-top: 4rem;
+  .footer .footer__details .footer__contact ul {
+    padding-bottom: 4rem;
+    padding-right: 0;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .footer .footer__wrapper {
-    padding: 8rem 4rem 4rem 4rem;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .footer .footer__yeo__logo {
-    display: none;
-  }
-  .footer .footer__cta h5 {
-    font-size: 2.5rem;
-  }
-  .footer .footer__cta h5 span::after {
-    height: 0.75rem;
-  }
-}
-
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 950px) {
   .footer {
     text-align: center;
-  }
-  .footer .footer__wrapper {
-    padding: 6rem 2rem 2rem 2rem;
-  }
-  .footer .footer__yeo__logo {
-    width: 12rem;
-    height: 8rem;
-  }
-  .footer .footer__yeo__logo svg {
-    width: 6rem;
-    right: 1rem;
-    bottom: 1rem;
   }
   .footer .footer__cta .btn {
     -webkit-box-pack: center;
@@ -2399,6 +2362,45 @@ main.careers__section {
   }
   .footer .footer__cta h5 br {
     display: none;
+  }
+  .footer .footer__details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer .footer__details .footer__contact {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .footer .footer__details .footer__contact ul {
+    padding-bottom: 2rem;
+  }
+  .footer .footer__details .footer__contact div a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer .footer__details .footer__furniture {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .footer .footer__cta h5 {
+    font-size: 2.5rem;
+  }
+  .footer .footer__cta h5 span::after {
+    height: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  .footer .footer__wrapper {
+    padding: 6rem 2rem 2rem 2rem;
   }
   .footer .footer__details {
     padding-bottom: 8rem;
