@@ -547,7 +547,7 @@
 
 .final__img {
   .img {
-    height: 60rem;
+    // height: 60rem;
 
     .img__cover {
       position: absolute;
@@ -566,29 +566,7 @@
   }
 }
 
-@media only screen and (max-width: 1280px) {
-  .final__img {
-    .img {
-      height: 50rem;
-    }
-  }
-}
 
-@media only screen and (max-width: 800px) {
-  .final__img {
-    .img {
-      height: 40rem;
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .final__img {
-    .img {
-      height: 32rem;
-    }
-  }
-}
 
 .more__work__slider {
   padding-bottom: 12rem;

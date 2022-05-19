@@ -1,11 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 import ReactMarkdown from 'react-markdown';
 
 export default function Accordion({ item }) {
   const [itemOpen, setItemOpen] = useState(false);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: { duration: 1.2, ease: 'expo.out' },
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: 'top 65%',
+        toggleActions: 'play none none reverse',
+      },
+    });
+
+    tl.fromTo(textRef.current, { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1 });
+
+    return () => tl.kill();
+  }, []);
 
   return (
-    <article className='accordion' onClick={() => setItemOpen(!itemOpen)}>
+    <article
+      className='accordion'
+      onClick={() => setItemOpen(!itemOpen)}
+      ref={textRef}
+    >
       <div className='title'>
         <svg
           xmlns='http://www.w3.org/2000/svg'

@@ -12,16 +12,12 @@ export default function ServiceIntroDetails({ service }) {
       defaults: { duration: 1.2, ease: 'expo.out' },
       scrollTrigger: {
         trigger: textRef.current,
-        start: 'top 70%',
+        start: 'top 60%',
         toggleActions: 'play none none reverse',
       },
     });
 
-    tl.fromTo(
-      textRef.current.querySelector('figure'),
-      { scaleY: 0 },
-      { scaleY: 1 }
-    );
+    tl.fromTo(textRef.current, { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1 });
 
     return () => tl.kill();
   }, []);

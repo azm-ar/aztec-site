@@ -42,7 +42,9 @@ export default function FinalImage({ portfolio }) {
               portfolio.attributes.fullWidthImage3.data.attributes
                 .alternativeText
             }
-            layout='fill'
+            layout='responsive'
+            width={portfolio.attributes.fullWidthImage2.data.attributes.width}
+            height={portfolio.attributes.fullWidthImage2.data.attributes.height}
           />
         </figure>
       </div>
