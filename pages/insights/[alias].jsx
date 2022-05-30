@@ -7,7 +7,10 @@ import fetch from 'node-fetch';
 export default function InsightsInnerPage({ insight }) {
   return (
     <Layout>
-      <Seo title='Insights Inner' />
+      <Seo
+        title={insight.attributes.seoTitle}
+        description={insight.attributes.seoDescription}
+      />
       <main className='insights-inner'>
         <InsightsInnerSection insight={insight} />
       </main>

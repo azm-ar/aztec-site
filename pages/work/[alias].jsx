@@ -15,8 +15,15 @@ import FinalImage from '../../components/sections/portfolio/FinalImage';
 export default function WorkInnerPage({ portfolio, portfolios }) {
   return (
     <Layout>
-      <Seo title={`${portfolio.attributes.title} Aztec Media Work`} />
-      <main className={`work__main work__main--`}>
+      <Seo
+        title={`${portfolio.attributes.seoTitle} Aztec Media Work`}
+        description={portfolio.attributes.seoDescription}
+      />
+      <main
+        className={`work__main work__main--${portfolio.attributes.title
+          .replace(' ', '')
+          .toLowerCase()}`}
+      >
         <WorkHeading portfolio={portfolio} />
         <WorkIntroDetails portfolio={portfolio} />
         <ShowcaseImage portfolio={portfolio} />
