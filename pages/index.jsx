@@ -29,25 +29,37 @@ export default function Home({ team, services, portfolio }) {
 
 export async function getStaticProps({ params }) {
   const teamRes = await fetch(
-    'https://aztec.yeomedia.dev/api/teams?populate=*'
+    'https://aztec.yeomedia.dev/api/teams?populate[image][populate]=*&populate[gif][populate]=*'
   );
   const teamData = await teamRes.json();
 
   const servicesRes = await fetch(
-    'https://aztec.yeomedia.dev/api/services?populate=*'
+    'https://aztec.yeomedia.dev/api/services?populate[image][populate]=*'
   );
   const servicesData = await servicesRes.json();
 
   const portfolioRes = await fetch(
-    'https://aztec.yeomedia.dev/api/portfolios?populate=*'
+    'https://aztec.yeomedia.dev/api/portfolios?populate[mainImage][populate]=*'
   );
   const portfolioData = await portfolioRes.json();
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
+  const shuffled = shuffle(portfolioData.data);
 
   return {
     props: {
       team: teamData.data,
       services: servicesData.data,
-      portfolio: portfolioData.data.filter((item, index) => index < 8),
+      portfolio: shuffled.filter((item, index) => index < 8),
     },
   };
 }

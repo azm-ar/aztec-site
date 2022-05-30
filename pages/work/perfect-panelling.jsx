@@ -37,22 +37,37 @@ export default function PerfectPanelling({ portfolio, portfolios }) {
 
 export async function getStaticProps({ params }) {
   const portfolioRes = await fetch(
-    'https://aztec.yeomedia.dev/api/portfolios?populate=*'
+    'https://aztec.yeomedia.dev/api/portfolios/13?populate=*'
   );
   const portfolioData = await portfolioRes.json();
 
-  const portfolio = portfolioData.data.filter(
-    (item) => item.attributes.title === 'Perfect Panelling'
+  const portfoliosRes = await fetch(
+    'https://aztec.yeomedia.dev/api/portfolios?populate[mainImage][populate]=*'
   );
+  const portfoliosData = await portfoliosRes.json();
 
-  const portfolios = portfolioData.data.filter(
-    (item) => item.attributes.title !== 'Perfect Panelling'
-  );
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
+  const shuffled = shuffle(portfoliosData.data);
+
+  const portfolios = shuffled.filter((item, index) => {
+    if (item.attributes.title !== 'Perfect Panelling' && index < 10) {
+      return item;
+    }
+  });
 
   return {
     props: {
       portfolios,
-      portfolio: portfolio[0],
+      portfolio: portfolioData.data,
     },
   };
 }

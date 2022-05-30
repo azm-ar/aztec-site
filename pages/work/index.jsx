@@ -18,13 +18,25 @@ export default function Work({ portfolio }) {
 
 export async function getStaticProps({ params }) {
   const portfolioRes = await fetch(
-    'https://aztec.yeomedia.dev/api/portfolios?populate=*'
+    'https://aztec.yeomedia.dev/api/portfolios?populate[mainImage][populate]=*'
   );
   const portfolioData = await portfolioRes.json();
 
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
+  const shuffled = shuffle(portfolioData.data);
+
   return {
     props: {
-      portfolio: portfolioData.data,
+      portfolio: shuffled,
     },
   };
 }

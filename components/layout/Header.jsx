@@ -25,7 +25,7 @@ export default function Header() {
               <div className='slide'></div>
             </a>
           </Link>
-          <a className='phone' href='tel:01935477073'>
+          <a className='phone' href='tel:01935477073' title='Call Aztec Media'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'

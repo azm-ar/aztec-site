@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WorkCircle({ item, index }) {
+export default function WorkCircle({ item, index, priority }) {
   const articleRef = useRef(null);
 
   useEffect(() => {
@@ -30,14 +30,24 @@ export default function WorkCircle({ item, index }) {
           <div className='logo__bg'></div>
           <div className='img'>
             <figure>
-              <Image
-                src={`https://aztec.yeomedia.dev${item.attributes.mainImage.data.attributes.url}`}
-                layout='fill'
-                alt={`Aztec Media Our Work ${item.attributes.title}`}
-                className='work__circle__img'
-                priority
-                data-itemname={item.attributes.title}
-              />
+              {priority ? (
+                <Image
+                  src={`https://aztec.yeomedia.dev${item.attributes.mainImage.data.attributes.url}`}
+                  layout='fill'
+                  alt={`Aztec Media Our Work ${item.attributes.title}`}
+                  className='work__circle__img'
+                  priority
+                  data-itemname={item.attributes.title}
+                />
+              ) : (
+                <Image
+                  src={`https://aztec.yeomedia.dev${item.attributes.mainImage.data.attributes.url}`}
+                  layout='fill'
+                  alt={`Aztec Media Our Work ${item.attributes.title}`}
+                  className='work__circle__img'
+                  data-itemname={item.attributes.title}
+                />
+              )}
             </figure>
             <LogoFillClip />
           </div>
