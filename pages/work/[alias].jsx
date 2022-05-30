@@ -12,11 +12,11 @@ import WorkImageGrid from '../../components/sections/portfolio/WorkImageGrid';
 import WorkTestimonial from '../../components/sections/portfolio/WorkTestimonial';
 import FinalImage from '../../components/sections/portfolio/FinalImage';
 
-export default function PerfectPanelling({ portfolio, portfolios }) {
+export default function WorkInnerPage({ portfolio, portfolios }) {
   return (
     <Layout>
-      <Seo title={'Perfect Panelling'} />
-      <main className='work__main work__main--panelling'>
+      <Seo title={`${portfolio.attributes.title} Aztec Media Work`} />
+      <main className={`work__main work__main--`}>
         <WorkHeading portfolio={portfolio} />
         <WorkIntroDetails portfolio={portfolio} />
         <ShowcaseImage portfolio={portfolio} />
@@ -36,15 +36,23 @@ export default function PerfectPanelling({ portfolio, portfolios }) {
 }
 
 export async function getStaticProps({ params }) {
-  const portfolioRes = await fetch(
-    'https://aztec.yeomedia.dev/api/portfolios/13?populate=*'
-  );
-  const portfolioData = await portfolioRes.json();
-
   const portfoliosRes = await fetch(
-    'https://aztec.yeomedia.dev/api/portfolios?populate[mainImage][populate]=*'
+    'https://aztec.yeomedia.dev/api/portfolios?populate=*'
   );
   const portfoliosData = await portfoliosRes.json();
+
+  let portfolio = {};
+
+  portfoliosData.data.forEach((item) => {
+    if (item.attributes.alias === params.alias) {
+      portfolio = item;
+    }
+  });
+
+  const allPortfoliosRes = await fetch(
+    'https://aztec.yeomedia.dev/api/portfolios?populate[mainImage][populate]=*'
+  );
+  const allPortfoliosData = await allPortfoliosRes.json();
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -56,18 +64,31 @@ export async function getStaticProps({ params }) {
     return array;
   }
 
-  const shuffled = shuffle(portfoliosData.data);
+  const shuffled = shuffle(allPortfoliosData.data);
 
   const portfolios = shuffled.filter((item, index) => {
-    if (item.attributes.title !== 'Perfect Panelling' && index < 10) {
+    if (item.attributes.title !== portfolio.title && index < 10) {
       return item;
     }
   });
 
   return {
     props: {
+      portfolio,
       portfolios,
-      portfolio: portfolioData.data,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const insightsRes = await fetch('https://aztec.yeomedia.dev/api/portfolios');
+  const insightsData = await insightsRes.json();
+
+  const aliass = insightsData.data.map((item) => item.attributes.alias);
+  const paths = aliass.map((alias) => ({ params: { alias } }));
+
+  return {
+    paths,
+    fallback: false,
   };
 }

@@ -38,9 +38,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const insightsRes = await fetch(
-    'https://aztec.yeomedia.dev/api/insights?populate=*'
-  );
+  const insightsRes = await fetch('https://aztec.yeomedia.dev/api/insights');
   const insightsData = await insightsRes.json();
 
   const aliass = insightsData.data.map((item) => item.attributes.alias);
