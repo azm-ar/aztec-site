@@ -3293,6 +3293,7 @@ main.careers__section {
   top: 0;
   left: 0;
   z-index: 0;
+  background-color: var(--blue);
 }
 
 .meet__the__team .team__splide .splide__slide .slide__content .img .hover__img {
@@ -3316,7 +3317,7 @@ main.careers__section {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
 }
 
 .meet__the__team .team__splide .splide__slide .slide__content .text {

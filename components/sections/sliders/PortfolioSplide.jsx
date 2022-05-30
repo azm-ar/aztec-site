@@ -51,8 +51,8 @@ export default function PortfolioSplide({ portfolio }) {
                     alt={
                       item.attributes.mainImage.data.attributes.alternativeText
                     }
-                    priority='true'
                     className='services__slider__img'
+                    quality={25}
                   />
                 </figure>
               </div>
@@ -67,7 +67,6 @@ export default function PortfolioSplide({ portfolio }) {
                     <Arrow />
                   </span>
                 </h3>
-
                 <p>{item.attributes.summary}</p>
               </div>
             </a>
