@@ -1763,6 +1763,31 @@ main.careers__section {
 }
 
 @media only screen and (max-width: 525px) {
+  .header .header__logo {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .header .header__logo svg:first-of-type {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .header .header__logo svg:last-of-type {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .header .header__logo {
+    width: 12rem;
+  }
+  .header .header__logo svg:first-of-type {
+    width: 3rem;
+  }
+  .header .header__logo svg:last-of-type {
+    display: block;
+  }
   .header .header__right .planner {
     display: none;
   }
@@ -2501,7 +2526,7 @@ main.careers__section {
 .general__testimonial {
   background-color: var(--light-grey);
   color: var(--blue);
-  padding: 10rem 0;
+  padding: 10rem 1rem 2rem 1rem;
 }
 
 .general__testimonial > div {
@@ -2789,7 +2814,7 @@ main.careers__section {
 
 @media only screen and (max-width: 600px) {
   .home__services .home__services__header {
-    padding: 2rem 2rem 8rem 2rem;
+    padding: 4rem 2rem 4rem 2rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

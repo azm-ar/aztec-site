@@ -21,6 +21,8 @@ export default function WorkCircle({ item, index, priority }) {
     });
 
     tl.fromTo(articleRef.current, { y: 0 }, { yPercent: -amount });
+
+    return () => tl.kill();
   }, [articleRef, index]);
 
   return (

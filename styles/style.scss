@@ -1159,6 +1159,38 @@ main {
 
 @media only screen and (max-width: 525px) {
   .header {
+    .header__logo {
+      width: max-content;
+
+      svg {
+        &:first-of-type {
+          width: max-content;
+        }
+
+        &:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .header {
+    .header__logo {
+      width: 12rem;
+
+      svg {
+        &:first-of-type {
+          width: 3rem;
+        }
+
+        &:last-of-type {
+          display: block;
+        }
+      }
+    }
+
     .header__right {
       .planner {
         display: none;
@@ -1932,7 +1964,7 @@ main {
 .general__testimonial {
   background-color: var(--light-grey);
   color: var(--blue);
-  padding: 10rem 0;
+  padding: 10rem 1rem 2rem 1rem;
 
   > div {
     max-width: 1024px;
