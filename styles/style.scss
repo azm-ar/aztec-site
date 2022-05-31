@@ -1804,7 +1804,7 @@ main {
     }
 
     .footer__details {
-      padding-bottom: 8rem;
+      padding-bottom: 0;
 
       .footer__contact {
         justify-content: center;
@@ -1849,11 +1849,14 @@ main {
       h5 {
         font-size: 1.75rem;
 
-        span {
-          display: inline;
+        a {
+          span {
+            display: inline;
+            height: 8px;
 
-          &::after {
-            display: none;
+            &::after {
+              display: none;
+            }
           }
         }
       }

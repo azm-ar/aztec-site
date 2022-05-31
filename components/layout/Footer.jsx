@@ -53,7 +53,7 @@ export default function Footer() {
             or <br />
             want to collaborate with us?
           </h5>
-          <Btn href='/' text={`Let's talk`} />
+          <Btn href='/contact' text={`Let's talk`} />
         </section>
         <section className='footer__details'>
           <address className='footer__contact'>

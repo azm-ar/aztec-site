@@ -16,10 +16,6 @@
   --bg-colour: #f69321;
 }
 
-.work__main--premier {
-  background-color: white;
-}
-
 .inner__portfolio__contact {
   padding: 10rem 0;
 }
@@ -440,7 +436,8 @@
 
 @media only screen and (max-width: 600px) {
   .work__image__grid .text__header {
-    padding: 0 1rem 10rem 1rem;
+    padding: 0 1rem 8rem 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -516,6 +513,12 @@
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+
+@media only screen and (max-width: 600px) {
+  .more__work__slider {
+    padding-bottom: 8rem;
+  }
 }
 
 html {
@@ -2402,7 +2405,7 @@ main.careers__section {
     padding: 6rem 2rem 2rem 2rem;
   }
   .footer .footer__details {
-    padding-bottom: 8rem;
+    padding-bottom: 0;
   }
   .footer .footer__details .footer__contact {
     -webkit-box-pack: center;
@@ -2429,10 +2432,11 @@ main.careers__section {
   .footer .footer__cta h5 {
     font-size: 1.75rem;
   }
-  .footer .footer__cta h5 span {
+  .footer .footer__cta h5 a span {
     display: inline;
+    height: 8px;
   }
-  .footer .footer__cta h5 span::after {
+  .footer .footer__cta h5 a span::after {
     display: none;
   }
   .footer .back__top__top {
@@ -2811,13 +2815,13 @@ main.careers__section {
 
 @media only screen and (max-width: 1200px) {
   .home__services__slider {
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .home__services__slider {
-    padding-bottom: 0;
+    padding-bottom: 4rem;
   }
 }
 

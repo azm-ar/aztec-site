@@ -1,7 +1,3 @@
-.work__main--premier {
-  background-color: rgb(255, 255, 255);
-}
-
 .inner__portfolio__contact {
   padding: 10rem 0;
 
@@ -473,7 +469,8 @@
 @media only screen and (max-width: 600px) {
   .work__image__grid {
     .text__header {
-      padding: 0 1rem 10rem 1rem;
+      padding: 0 1rem 8rem 1rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -560,5 +557,11 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .more__work__slider {
+    padding-bottom: 8rem;
   }
 }
