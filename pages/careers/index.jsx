@@ -8,7 +8,10 @@ import ServicesSlider from '../../components/sections/services/ServicesSlider';
 export default function Careers({ careers, services }) {
   return (
     <Layout>
-      <Seo title='Careers' />
+      <Seo
+        title='Aztec Media | Careers'
+        description='Join our team of Yeovil website developers and Yeovil graphic designers at Aztec Media. Creative &amp; digital experts in Somerset. Careers in web &amp; graphic design.'
+      />
       <main className='careers__section'>
         <div className='careers__section__header'>
           <div className='text'>

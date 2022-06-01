@@ -11,7 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function About({ team, services }) {
   return (
     <Layout>
-      <Seo title='About Us' />
+      <Seo
+        title='Aztec Media | Who we are'
+        description='Aztec Media, a creative design agency in Yeovil, Somerset. Team of creative experts providing affordable web & graphic design, photography & marketing, Yeovil.'
+      />
       <main className='about'>
         <AboutSection team={team} />
         <div className='white__col__wrap'>

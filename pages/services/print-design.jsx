@@ -17,11 +17,8 @@ export default function PrintDesign({ service, services }) {
         title={service.attributes.seoTitle}
         description={service.attributes.seoDescription}
       />
-      <main className='print-design'>
-        <ServicesHeader
-          title='Print Design'
-          colour={service.attributes.colour}
-        />
+      <main className={service.attributes.title.toLowerCase().replace(' ', '')}>
+        <ServicesHeader service={service} />
         <ServicesPageSlider service={service} />
         <ServiceMainDetails service={service} />
         <ServiceIntroDetails service={service} />
@@ -41,7 +38,7 @@ export default function PrintDesign({ service, services }) {
 
 export async function getStaticProps({ params }) {
   const servicesRes = await fetch(
-    'https://aztec.yeomedia.dev/api/services?populate[servicePageSlider][populate]=*&populate[image]=*&populate[fullWidthImage1]=*&populate[fullWidthImage2]=*&populate[textImage]=*&populate[accordions]=*&populate[servicePageBox]=*'
+    'https://aztec.yeomedia.dev/api/services?populate[image]=*'
   );
   const servicesData = await servicesRes.json();
 
@@ -49,14 +46,15 @@ export async function getStaticProps({ params }) {
     (item) => item.attributes.title !== 'Print Design'
   );
 
-  const service = servicesData.data.filter(
-    (item) => item.attributes.title === 'Print Design'
+  const serviceRes = await fetch(
+    'https://aztec.yeomedia.dev/api/services/3?populate[servicePageSlider][populate]=*&populate[image]=*&populate[fullWidthImage1]=*&populate[fullWidthImage2]=*&populate[textImage]=*&populate[accordions]=*&populate[servicePageBox]=*'
   );
+  const serviceData = await serviceRes.json();
 
   return {
     props: {
       services,
-      service: service[0],
+      service: serviceData.data,
     },
   };
 }

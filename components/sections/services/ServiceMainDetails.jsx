@@ -13,7 +13,14 @@ export default function ServiceMainDetails({ service }) {
           />
         </figure>
       </div>
-      <div className='content' style={{ backgroundColor: '#5B7B7A' }}>
+      <div
+        className='content'
+        style={{
+          backgroundColor: service.attributes.colour
+            ? service.attributes.colour
+            : 'var(--blue)',
+        }}
+      >
         <h3>{service.attributes.servicePageBox.title}</h3>
         <ul className='grid'>
           <li>

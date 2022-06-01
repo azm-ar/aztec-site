@@ -14,7 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home({ team, services, portfolio }) {
   return (
     <Layout>
-      <Seo title='Home' />
+      <Seo
+        title='Aztec Media | Home'
+        description='AztecMedia, a creative design agency based in Yeovil, Somerset. Yeovil website developers providing affordable web &amp; graphic design, photography &amp; marketing.'
+      />
       <main className='home'>
         <LargeHero />
         <HomeServices services={services} />

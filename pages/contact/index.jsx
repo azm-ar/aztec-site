@@ -9,7 +9,10 @@ import MeetTheTeam from '../../components/general/MeetTheTeam';
 export default function Contact({ team }) {
   return (
     <Layout>
-      <Seo title='Contact Us' />
+      <Seo
+        title='Aztec Media | Get in touch'
+        description='Call 01935 477073 or hello@aztec.media for a free website quote / free graphic design quote. Leading creative graphic design and web studio in Yeovil, Somerset.'
+      />
       <main className='contact'>
         <section className='dot__logo'>
           <DotLogo img='/dots.svg' />

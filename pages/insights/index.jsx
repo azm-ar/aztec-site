@@ -8,7 +8,10 @@ import fetch from 'node-fetch';
 export default function Insights({ insights }) {
   return (
     <Layout>
-      <Seo title='Insights' />
+      <Seo
+        title='Aztec Media | Insights'
+        description='View all the latest news and information from Aztec Media, Yeovil Somerset Digital &amp; Creative Agency.'
+      />
       <main className='insights'>
         <div className='news__header'>
           <h1>News Page</h1>
