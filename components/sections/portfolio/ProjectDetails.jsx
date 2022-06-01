@@ -18,7 +18,7 @@ export default function ProjectDetails({ portfolio }) {
 
     tl.fromTo(
       [
-        textRef.current.querySelectorAll('.left span'),
+        textRef.current.querySelectorAll('.left li'),
         textRef.current.querySelector('.right p'),
       ],
       { y: 25, autoAlpha: 0 },
