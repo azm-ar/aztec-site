@@ -40,7 +40,7 @@ export default function Work({ portfolio, services }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const portfolioRes = await fetch(
     'https://aztec.yeomedia.dev/api/portfolios?populate[mainImage][populate]=*'
   );

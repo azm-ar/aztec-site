@@ -42,7 +42,7 @@ export default function WorkInnerPage({ portfolio, portfolios }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const portfoliosRes = await fetch(
     'https://aztec.yeomedia.dev/api/portfolios?populate=*'
   );
@@ -87,15 +87,15 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  const insightsRes = await fetch('https://aztec.yeomedia.dev/api/portfolios');
-  const insightsData = await insightsRes.json();
+// export async function getStaticPaths() {
+//   const insightsRes = await fetch('https://aztec.yeomedia.dev/api/portfolios');
+//   const insightsData = await insightsRes.json();
 
-  const aliass = insightsData.data.map((item) => item.attributes.alias);
-  const paths = aliass.map((alias) => ({ params: { alias } }));
+//   const aliass = insightsData.data.map((item) => item.attributes.alias);
+//   const paths = aliass.map((alias) => ({ params: { alias } }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }

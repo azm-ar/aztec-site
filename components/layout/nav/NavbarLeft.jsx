@@ -55,31 +55,41 @@ export default function NavbarLeft() {
               <span>
                 <Line />
               </span>
-              Commercial
+              <Link href='/sectors/commercial'>
+                <a>Commercial</a>
+              </Link>
             </li>
             <li className='nav--anim'>
               <span>
                 <Line />
               </span>
-              Hospitality
+              <Link href='/sectors/hospitality'>
+                <a>Hospitality</a>
+              </Link>
             </li>
             <li className='nav--anim'>
               <span>
                 <Line />
               </span>
-              Education
+              <Link href='/sectors/education'>
+                <a>Education</a>
+              </Link>
             </li>
             <li className='nav--anim'>
               <span>
                 <Line />
               </span>
-              Charities
+              <Link href='/sectors/charites'>
+                <a>Charities</a>
+              </Link>
             </li>
             <li className='nav--anim'>
               <span>
                 <Line />
               </span>
-              Food &amp; Drink
+              <Link href='/sectors/food-and-drink'>
+                <a>Food &amp; Drink</a>
+              </Link>
             </li>
           </ul>
         </div>
