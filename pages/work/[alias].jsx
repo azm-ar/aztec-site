@@ -30,7 +30,9 @@ export default function WorkInnerPage({ portfolio, portfolios }) {
         <ProjectDetails portfolio={portfolio} />
         <WorkImageSlider portfolio={portfolio} />
         <WorkImageGrid portfolio={portfolio} />
-        <WorkTestimonial portfolio={portfolio} />
+        {portfolio.attributes.testimonial && (
+          <WorkTestimonial portfolio={portfolio} />
+        )}
         <FinalImage portfolio={portfolio} />
         <InnerPortfolioContact bgColour='#fff' />
         <section className='more__work__slider'>

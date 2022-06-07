@@ -11,7 +11,7 @@ export default function WorkTestimonial({ portfolio }) {
       defaults: { duration: 0.8, ease: 'power1.inOut' },
       scrollTrigger: {
         trigger: textRef.current,
-        start: 'top 70%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
     });

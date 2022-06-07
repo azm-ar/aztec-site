@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import LogoFillClip from '../../vectors/LogoFillClip';
+import Arrow from '../../vectors/Arrow';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +11,7 @@ export default function WorkCircle({ item, index, priority }) {
   const articleRef = useRef(null);
 
   useEffect(() => {
-    let amount = (index / 2) * 50;
+    let amount = (index / 2) * 40;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -56,6 +57,9 @@ export default function WorkCircle({ item, index, priority }) {
           <div className='hover__circle'>
             <h4>{item.attributes.title}</h4>
             <p>{item.attributes.service1}</p>
+            <div className='discover'>
+              <Arrow />
+            </div>
             <LogoFillClip />
           </div>
         </a>

@@ -3930,9 +3930,9 @@ main.careers__section {
   padding: 4rem 2rem 12rem 2rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  gap: 6rem;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
 }
 
 .work__circles .work__plan__btn {
@@ -3962,8 +3962,8 @@ main.careers__section {
 }
 
 .work__circles .work__circle .logo__bg {
-  width: calc((100vw - 4rem - 12rem - 1rem) / 3);
-  height: calc((100vw - 4rem - 12rem - 1rem) / 3);
+  width: calc((100vw - 4rem - 12rem - 1rem) / 4);
+  height: calc((100vw - 4rem - 12rem - 1rem) / 4);
   margin-left: auto;
 }
 
@@ -3983,9 +3983,36 @@ main.careers__section {
   opacity: 1;
 }
 
+.work__circles .work__circle:hover .hover__circle .discover svg {
+  -webkit-animation: arrowMove 0.8s ease-out infinite alternate;
+          animation: arrowMove 0.8s ease-out infinite alternate;
+}
+
+@-webkit-keyframes arrowMove {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+}
+
+@keyframes arrowMove {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+}
+
 .work__circles .work__circle .hover__circle {
-  width: 65%;
-  height: 65%;
+  width: 75%;
+  height: 75%;
   background-color: var(--orange);
   z-index: 1;
   position: absolute;
@@ -4019,32 +4046,22 @@ main.careers__section {
 }
 
 .work__circles .work__circle .hover__circle h4 {
-  font-size: 2rem;
-  padding-bottom: 1rem;
+  font-size: 1.75rem;
+  padding-bottom: 0.5rem;
   font-family: var(--title-font);
   font-weight: var(--font-med);
 }
 
-.work__circles .work__circle .hover__circle .discover {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.work__circles .work__circle .hover__circle p {
+  font-size: 0.9rem;
 }
 
-.work__circles .work__circle .hover__circle .discover p {
-  font-weight: var(--font-light);
-  opacity: 0.7;
+.work__circles .work__circle .hover__circle .discover {
+  margin-top: 0.75rem;
 }
 
 .work__circles .work__circle .hover__circle .discover svg {
   width: 1rem;
-  margin-left: 1rem;
 }
 
 .work__circles .work__circle .hover__circle .discover svg path {
@@ -4112,30 +4129,49 @@ main.careers__section {
   opacity: 0.25 !important;
 }
 
+@media only screen and (max-width: 1440px) {
+  .work__circles {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  .work__circles .work__circle .logo__bg {
+    width: calc((100vw - 4rem - 8rem - 1rem) / 3);
+    height: calc((100vw - 4rem - 8rem - 1rem) / 3);
+  }
+}
+
 @media only screen and (max-width: 1360px) {
   .work__circles {
     padding-top: 0;
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1024px) {
   .work__circles {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
   .work__circles .work__circle .logo__bg {
-    width: calc((100vw - 4rem - 6rem - 1rem) / 2);
-    height: calc((100vw - 4rem - 6rem - 1rem) / 2);
+    width: calc((100vw - 4rem - 4rem - 1rem) / 2);
+    height: calc((100vw - 4rem - 4rem - 1rem) / 2);
   }
-}
-
-@media only screen and (max-width: 1024px) {
+  .work__circles .work__circle .hover__circle {
+    padding: 1.5rem;
+    width: 80%;
+    height: 80%;
+  }
+  .work__circles .work__circle .hover__circle h4 {
+    font-size: 1.25rem;
+  }
+  .work__circles .work__circle .hover__circle p {
+    font-size: 0.8rem;
+  }
   .work__circles .work__circle .title {
     font-size: 3rem;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 650px) {
   .work__circles {
     display: block;
     padding: 0 4rem 4rem 4rem;
@@ -4169,11 +4205,6 @@ main.careers__section {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
     display: block;
-  }
-  .work__circles .work__circle .hover__circle .discover {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
   }
 }
 

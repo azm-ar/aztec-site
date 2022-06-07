@@ -12,7 +12,7 @@ export default function WorkImageGrid({ portfolio }) {
       defaults: { duration: 1.2, ease: 'expo.out' },
       scrollTrigger: {
         trigger: imgRef.current,
-        start: 'top 70%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
     });

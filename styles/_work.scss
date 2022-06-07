@@ -84,8 +84,8 @@
   background-color: var(--blue);
   padding: 4rem 2rem 12rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 6rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
 
   .work__plan__btn {
     display: flex;
@@ -112,8 +112,8 @@
 
     .logo__bg {
       // calc(screen - padding - gap - scrollbar / columns)
-      width: calc((100vw - 4rem - 12rem - 1rem) / 3);
-      height: calc((100vw - 4rem - 12rem - 1rem) / 3);
+      width: calc((100vw - 4rem - 12rem - 1rem) / 4);
+      height: calc((100vw - 4rem - 12rem - 1rem) / 4);
       margin-left: auto;
 
       svg {
@@ -131,12 +131,27 @@
     &:hover {
       .hover__circle {
         opacity: 1;
+
+        .discover {
+          svg {
+            animation: arrowMove 0.8s ease-out infinite alternate;
+          }
+        }
+      }
+    }
+
+    @keyframes arrowMove {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(1rem);
       }
     }
 
     .hover__circle {
-      width: 65%;
-      height: 65%;
+      width: 75%;
+      height: 75%;
       background-color: var(--orange);
       z-index: 1;
       position: absolute;
@@ -158,25 +173,21 @@
       }
 
       h4 {
-        font-size: 2rem;
-        padding-bottom: 1rem;
+        font-size: 1.75rem;
+        padding-bottom: 0.5rem;
         font-family: var(--title-font);
         font-weight: var(--font-med);
       }
 
-      .discover {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      p {
+        font-size: 0.9rem;
+      }
 
-        p {
-          font-weight: var(--font-light);
-          opacity: 0.7;
-        }
+      .discover {
+        margin-top: 0.75rem;
 
         svg {
           width: 1rem;
-          margin-left: 1rem;
 
           path {
             fill: #fff;
@@ -246,28 +257,50 @@
   }
 }
 
+@media only screen and (max-width: 1440px) {
+  .work__circles {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .work__circle {
+      .logo__bg {
+        // calc(screen - padding - gap - scrollbar / columns)
+        width: calc((100vw - 4rem - 8rem - 1rem) / 3);
+        height: calc((100vw - 4rem - 8rem - 1rem) / 3);
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1360px) {
   .work__circles {
     padding-top: 0;
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1024px) {
   .work__circles {
     grid-template-columns: 1fr 1fr;
 
     .work__circle {
       .logo__bg {
-        width: calc((100vw - 4rem - 6rem - 1rem) / 2);
-        height: calc((100vw - 4rem - 6rem - 1rem) / 2);
+        width: calc((100vw - 4rem - 4rem - 1rem) / 2);
+        height: calc((100vw - 4rem - 4rem - 1rem) / 2);
       }
-    }
-  }
-}
 
-@media only screen and (max-width: 1024px) {
-  .work__circles {
-    .work__circle {
+      .hover__circle {
+        padding: 1.5rem;
+        width: 80%;
+        height: 80%;
+
+        h4 {
+          font-size: 1.25rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
       .title {
         font-size: 3rem;
       }
@@ -275,7 +308,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 650px) {
   .work__circles {
     display: block;
     padding: 0 4rem 4rem 4rem;
@@ -308,10 +341,6 @@
         clip-path: none;
         transform: translate(0, 0);
         display: block;
-
-        .discover {
-          justify-content: flex-start;
-        }
       }
     }
   }

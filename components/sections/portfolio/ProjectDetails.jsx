@@ -11,7 +11,7 @@ export default function ProjectDetails({ portfolio }) {
       defaults: { duration: 0.6, ease: 'power2.inOut' },
       scrollTrigger: {
         trigger: textRef.current,
-        start: 'top 70%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
     });
@@ -61,8 +61,9 @@ export default function ProjectDetails({ portfolio }) {
                       href={`https://${portfolio.attributes.website}`}
                       rel='noreferrer nofollower'
                       target='_blank'
+                      style={{ color: portfolio.attributes.bgColour }}
                     >
-                      - {portfolio.attributes.website}
+                      {portfolio.attributes.website}
                     </a>
                   </span>
                 </li>
