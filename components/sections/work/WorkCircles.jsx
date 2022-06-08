@@ -7,7 +7,7 @@ export default function WorkCircles({ portfolio }) {
         <WorkCircle
           key={index}
           item={item}
-          priority={index < 6 ? true : false}
+          priority={index < 12 ? true : false}
           index={portfolio.length - index}
         />
       ))}

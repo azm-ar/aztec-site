@@ -11,6 +11,12 @@ export default function WorkCircle({ item, index, priority }) {
   const articleRef = useRef(null);
 
   useEffect(() => {
+    const loadTl = gsap.timeline({
+      defaults: { ease: 'power2.inOut', duration: 1.2 },
+    });
+
+    loadTl.fromTo(articleRef.current, { autoAlpha: 0 }, { autoAlpha: 1 });
+
     let amount = (index / 2) * 40;
 
     const tl = gsap.timeline({
