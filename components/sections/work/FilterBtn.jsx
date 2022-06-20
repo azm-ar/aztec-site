@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import Arrow from '../../vectors/Arrow';
+
 export default function FilterBtn({
   text,
   alias,
@@ -6,22 +9,23 @@ export default function FilterBtn({
   setWork,
   portfolio,
 }) {
+  const [animateOut, setAnimateOut] = useState(false);
+
   return (
     <button
       type='button'
       onClick={() => {
-        if (currentSelection !== alias) {
-          setCurrentSelection(alias);
-          setWork(
-            portfolio.filter((item) => item.attributes.filters.includes(alias))
-          );
-        } else {
-          setCurrentSelection(null);
-          setWork(portfolio);
-        }
+        setCurrentSelection(alias);
+        setWork(
+          portfolio.filter((item) => item.attributes.filters.includes(alias))
+        );
       }}
+      className={`${animateOut ? 'animate-out' : ''}`}
+      onMouseLeave={() => setAnimateOut(true)}
+      onTransitionEnd={() => setAnimateOut(false)}
     >
       {text}
+      <Arrow />
     </button>
   );
 }

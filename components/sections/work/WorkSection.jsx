@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import WorkCircles from '../work/WorkCircles';
-import FilterBtn from './FilterBtn';
+import IndustryFilters from './IndustryFilters';
+import DisiplineFilters from './DisiplineFilters';
+import FilterToggleBtn from './FilterToggleBtn';
 
 export default function WorkSection({ portfolio }) {
   const [work, setWork] = useState([]);
@@ -20,105 +22,47 @@ export default function WorkSection({ portfolio }) {
           in technology, we help brands.
         </p>
       </div>
-      <div className='work__filter__toggle'>
-        <button type='button' onClick={() => setShowFilters(!showFilters)}>
-          {showFilters ? 'Hide' : 'Show'} Filters
-        </button>
+      <div
+        className='work__filter__toggle'
+        style={{
+          paddingBottom: showFilters ? '' : '4rem',
+        }}
+      >
+        <FilterToggleBtn
+          text={'All'}
+          setShowFilters={setShowFilters}
+          showFilters={showFilters}
+          setWork={setWork}
+          portfolio={portfolio}
+        />
+        <FilterToggleBtn
+          filter='industry'
+          text={'Filter By Industry'}
+          setShowFilters={setShowFilters}
+          showFilters={showFilters}
+        />
+        <FilterToggleBtn
+          filter='disipline'
+          text={'Filter By Disipline'}
+          setShowFilters={setShowFilters}
+          showFilters={showFilters}
+        />
       </div>
-      {showFilters && (
-        <section className='work__filter__btns'>
-          <>
-            <button
-              type='button'
-              onClick={() => {
-                setCurrentSelection(null);
-                setWork(portfolio);
-              }}
-            >
-              All
-            </button>
-            <FilterBtn
-              text='Web Design'
-              alias='web-design'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Branding'
-              alias='branding'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Print Design'
-              alias='print-design'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Photography'
-              alias='photography'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Social Media'
-              alias='social-media'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Commercial'
-              alias='commercial'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Hospitality'
-              alias='hospitality'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Education'
-              alias='education'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Charities'
-              alias='charities'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-            <FilterBtn
-              text='Food &amp; Drink'
-              alias='food-and-drink'
-              setCurrentSelection={setCurrentSelection}
-              currentSelection={currentSelection}
-              setWork={setWork}
-              portfolio={portfolio}
-            />
-          </>
-        </section>
+      {showFilters && showFilters === 'disipline' && (
+        <DisiplineFilters
+          currentSelection={currentSelection}
+          setCurrentSelection={setCurrentSelection}
+          setWork={setWork}
+          portfolio={portfolio}
+        />
+      )}
+      {showFilters && showFilters === 'industry' && (
+        <IndustryFilters
+          currentSelection={currentSelection}
+          setCurrentSelection={setCurrentSelection}
+          setWork={setWork}
+          portfolio={portfolio}
+        />
       )}
       <WorkCircles portfolio={work} />
     </section>

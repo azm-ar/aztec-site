@@ -7,7 +7,6 @@ import ServicesSlider from '../../components/sections/services/ServicesSlider';
 import GeneralTestimonial from '../../components/general/GeneralTestimonial';
 
 export default function Work({ portfolio, services }) {
-  console.log(portfolio);
   return (
     <Layout>
       <Seo title='Our Work' />
