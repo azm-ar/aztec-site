@@ -1,7 +1,7 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import Image from 'next/image';
 
-export default function ServicesPageSlider({service}) {
+export default function ServicesPageSlider({ service }) {
   return (
     <section className='services__page__slider'>
       <div
@@ -49,7 +49,7 @@ export default function ServicesPageSlider({service}) {
                     src={`https://aztec.yeomedia.dev${item.image.data.attributes.url}`}
                     alt='#'
                     layout='fill'
-                    priority
+                    priority={true}
                   />
                 </figure>
               </div>

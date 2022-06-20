@@ -18,7 +18,9 @@ export default function FilterToggleBtn({
           setShowFilters(false);
           setWork(portfolio);
         }}
-        className={`${animateOut ? 'animate-out' : ''}`}
+        className={`${animateOut ? 'animate-out' : ''} ${
+          showFilters === false ? 'is--active' : ''
+        }`}
         onMouseLeave={() => setAnimateOut(true)}
         onTransitionEnd={() => setAnimateOut(false)}
       >
@@ -37,7 +39,9 @@ export default function FilterToggleBtn({
             setShowFilters(filter);
           }
         }}
-        className={`${animateOut ? 'animate-out' : ''}`}
+        className={`${animateOut ? 'animate-out' : ''} ${
+          showFilters === filter ? 'is--active' : ''
+        }`}
         onMouseLeave={() => setAnimateOut(true)}
         onTransitionEnd={() => setAnimateOut(false)}
       >

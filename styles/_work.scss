@@ -438,6 +438,16 @@
         opacity: 1;
       }
     }
+
+    &.is--active {
+      &::after {
+        transform: translateX(0%);
+      }
+
+      svg {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -446,7 +456,6 @@
   padding: 0 8rem 0rem 8rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: relative;
 
   button {
@@ -492,6 +501,12 @@
       margin-left: 1rem;
       transition: var(--fast-speed);
     }
+
+    &.is--active {
+      &::after {
+        transform: translateX(0%);
+      }
+    }
   }
 }
 
@@ -524,7 +539,7 @@
 
 @media only screen and (max-width: 550px) {
   .work__filter__btns {
-    padding: 0 1rem 4rem 1rem;
+    padding: 0 2rem 4rem 2rem;
     grid-template-columns: 1fr 1fr;
 
     button {

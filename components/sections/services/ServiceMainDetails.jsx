@@ -9,7 +9,7 @@ export default function ServiceMainDetails({ service }) {
             src={`https://aztec.yeomedia.dev${service.attributes.fullWidthImage1.data.attributes.url}`}
             alt='#'
             layout='fill'
-            priority
+            priority={true}
           />
         </figure>
       </div>

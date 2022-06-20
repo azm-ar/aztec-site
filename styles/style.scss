@@ -1411,20 +1411,10 @@ main {
 
       p {
         font-size: 1rem;
-        padding: 0 10rem 0 3.25rem;
+        padding-left: 2rem;
+        padding-right: 0.25rem;
+        max-width: 425px;
         font-weight: var(--font-xlight);
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  .services__splide {
-    .splide__slide {
-      .content {
-        p {
-          padding: 0 4rem 0 3.25rem;
-        }
       }
     }
   }
@@ -1443,7 +1433,19 @@ main {
         }
 
         p {
-          padding: 0 0.5rem 0 3.25rem;
+          padding-left: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .services__splide {
+    .splide__slide {
+      .content {
+        p {
+          padding: 0 1.5rem 0 0.25rem;
         }
       }
     }
@@ -1470,10 +1472,6 @@ main {
           .number {
             display: none;
           }
-        }
-
-        p {
-          padding: 0 1rem 0 0;
         }
       }
     }

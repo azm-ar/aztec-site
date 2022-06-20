@@ -12,12 +12,20 @@ export default function ServicesSplide({ services }) {
         perPage: 3,
         drag: 'free',
         gap: '4rem',
+        padding: '10rem',
         focus: 'center',
         trimSpace: false,
         pagination: false,
         breakpoints: {
+          1920: {
+            padding: '8rem',
+          },
+          1600: {
+            padding: '6rem',
+          },
           1440: {
             perPage: 2,
+            padding: '4rem',
           },
           800: {
             perPage: 1,
@@ -58,7 +66,9 @@ export default function ServicesSplide({ services }) {
               </div>
               <div className='content'>
                 <h3>
-                  <span className='number'>{service.attributes.number}</span>
+                  <span className='number'>
+                    {i + 1 >= 10 ? i + 1 : `0${i + 1}`}
+                  </span>
                   <span className='text'>
                     {service.attributes.title}
                     <div className='underline'></div>

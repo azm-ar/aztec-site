@@ -12,7 +12,7 @@ export default function ServiceIntroDetails({ service }) {
       defaults: { duration: 1.2, ease: 'expo.out' },
       scrollTrigger: {
         trigger: textRef.current,
-        start: 'top 60%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
     });

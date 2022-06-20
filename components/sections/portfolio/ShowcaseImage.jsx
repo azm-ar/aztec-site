@@ -41,6 +41,7 @@ export default function ShowcaseImage({ portfolio }) {
             portfolio.attributes.fullWidthImage1.data.attributes.alternativeText
           }
           layout='responsive'
+          priority={true}
           width={portfolio.attributes.fullWidthImage2.data.attributes.width}
           height={portfolio.attributes.fullWidthImage2.data.attributes.height}
         />

@@ -20,7 +20,9 @@ export default function FilterBtn({
           portfolio.filter((item) => item.attributes.filters.includes(alias))
         );
       }}
-      className={`${animateOut ? 'animate-out' : ''}`}
+      className={`${animateOut ? 'animate-out' : ''} ${
+        currentSelection === alias ? 'is--active' : ''
+      }`}
       onMouseLeave={() => setAnimateOut(true)}
       onTransitionEnd={() => setAnimateOut(false)}
     >

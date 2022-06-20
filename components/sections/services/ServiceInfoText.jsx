@@ -14,7 +14,7 @@ export default function ServiceInfoText({ service }) {
       defaults: { duration: 1.2, ease: 'expo.out' },
       scrollTrigger: {
         trigger: imgRef.current,
-        start: 'top 70%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
     });
@@ -41,7 +41,7 @@ export default function ServiceInfoText({ service }) {
         ],
         { y: 25, autoAlpha: 0 },
         { y: 0, autoAlpha: 1, stagger: 0.2, duration: 1, ease: 'power2.inOut' },
-        0.8
+        0.3
       );
 
     return () => tl.kill();
