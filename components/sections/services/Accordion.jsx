@@ -13,7 +13,7 @@ export default function Accordion({ item }) {
       defaults: { duration: 1.2, ease: 'expo.out' },
       scrollTrigger: {
         trigger: textRef.current,
-        start: 'top 65%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
     });

@@ -9,7 +9,7 @@ import GeneralTestimonial from '../../components/general/GeneralTestimonial';
 export default function Work({ portfolio, services }) {
   return (
     <Layout>
-      <Seo title='Our Work' />
+      <Seo title='Our Work | Aztec Media Portfolio' />
       <main className='work'>
         <WorkSection portfolio={portfolio} />
         <GeneralTestimonial />

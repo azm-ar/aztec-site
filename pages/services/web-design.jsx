@@ -17,7 +17,7 @@ export default function WebDesign({ service, services }) {
         title={service.attributes.seoTitle}
         description={service.attributes.seoDescription}
       />
-      <main className={service.attributes.title.toLowerCase().replace(' ', '')}>
+      <main className={service.attributes.alias}>
         <ServicesHeader service={service} />
         <ServicesPageSlider service={service} />
         <ServiceMainDetails service={service} />

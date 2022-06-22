@@ -13,6 +13,13 @@ export default function WorkSection({ portfolio }) {
     setWork(portfolio);
   }, [portfolio]);
 
+  useEffect(() => {
+    if (!showFilters) {
+      console.log('yes');
+      setCurrentSelection('');
+    }
+  }, [showFilters]);
+
   return (
     <section className='work__section'>
       <div className='work__header'>

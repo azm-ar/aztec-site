@@ -16,14 +16,10 @@ export default function WorkInnerPage({ portfolio, portfolios }) {
   return (
     <Layout>
       <Seo
-        title={`${portfolio.attributes.seoTitle} Aztec Media Work`}
+        title={`${portfolio.attributes.seoTitle} | Aztec Media Portfolio`}
         description={portfolio.attributes.seoDescription}
       />
-      <main
-        className={`work__main work__main--${portfolio.attributes.title
-          .replace(' ', '')
-          .toLowerCase()}`}
-      >
+      <main className={`work__main work__main--${portfolio.attributes.alias}`}>
         <WorkHeading portfolio={portfolio} />
         <WorkIntroDetails portfolio={portfolio} />
         <ShowcaseImage portfolio={portfolio} />

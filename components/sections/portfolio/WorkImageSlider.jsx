@@ -8,6 +8,7 @@ export default function WorkImageSlider({ portfolio }) {
         hasTrack={false}
         options={{
           rewind: true,
+          type: 'loop',
           arrows: false,
           pagination: false,
           perPage: 1,

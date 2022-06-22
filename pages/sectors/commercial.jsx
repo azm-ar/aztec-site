@@ -10,16 +10,16 @@ import ServiceFullImg from '../../components/sections/services/ServiceFullImg';
 import ServiceInfoText from '../../components/sections/services/ServiceInfoText';
 import ServiceTestimonial from '../../components/sections/services/ServiceTestimonial';
 
-export default function Branding({ service, services }) {
+export default function Commercial({ service, services }) {
   return (
     <Layout>
       <Seo
         title={service.attributes.seoTitle}
         description={service.attributes.seoDescription}
       />
-      <main className={service.attributes.title.toLowerCase().replace(' ', '')}>
+      <main className={service.attributes.alias}>
         <ServicesHeader service={service} />
-        <ServicesPageSlider service={service} />
+        {/*<ServicesPageSlider service={service} />
         <ServiceMainDetails service={service} />
         <ServiceIntroDetails service={service} />
         <ServiceFullImg service={service} />
@@ -29,7 +29,7 @@ export default function Branding({ service, services }) {
           services={services}
           bgColour={service.attributes.colour}
           colour='#fff'
-        />
+        /> */}
       </main>
       <Footer />
     </Layout>
@@ -38,7 +38,7 @@ export default function Branding({ service, services }) {
 
 export async function getStaticProps({ params }) {
   const servicesRes = await fetch(
-    'https://aztec.yeomedia.dev/api/services?populate[image]=*'
+    'https://aztec.yeomedia.dev/api/sectors?populate[image]=*'
   );
   const servicesData = await servicesRes.json();
 
@@ -47,13 +47,13 @@ export async function getStaticProps({ params }) {
   );
 
   const serviceRes = await fetch(
-    'https://aztec.yeomedia.dev/api/services/2?populate[servicePageSlider][populate]=*&populate[image]=*&populate[fullWidthImage1]=*&populate[fullWidthImage2]=*&populate[textImage]=*&populate[accordions]=*&populate[servicePageBox]=*'
+    'https://aztec.yeomedia.dev/api/sectors/1?populate[sectorPageSlider][populate]=*&populate[image]=*&populate[fullWidthImage1]=*&populate[fullWidthImage2]=*&populate[textImage]=*&populate[accordions]=*&populate[sectorPageBox]=*'
   );
   const serviceData = await serviceRes.json();
 
   return {
     props: {
-      services,
+      services: servicesData.data,
       service: serviceData.data,
     },
   };

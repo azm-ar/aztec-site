@@ -59,7 +59,7 @@ export default function ServicesSplide({ services }) {
                     alt={
                       service.attributes.image.data.attributes.alternativeText
                     }
-                    priority
+                    priority={true}
                     className='services__slider__img'
                   />
                 </figure>

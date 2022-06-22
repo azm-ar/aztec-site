@@ -45,7 +45,7 @@ export default function WorkCircle({ item, index, priority }) {
                   layout='fill'
                   alt={`Aztec Media Our Work ${item.attributes.title}`}
                   className='work__circle__img'
-                  priority
+                  priority={true}
                   data-itemname={item.attributes.title}
                 />
               ) : (
